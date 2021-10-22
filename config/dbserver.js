@@ -20,6 +20,6 @@ module.exports = function() {
 }*/
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('crud', 'root', '12345678', { dialect: 'mysql', host: 'localhost' });
+const sequelize = new Sequelize('copa_do_mundo', 'root', '12345678', { dialect: 'mysql', host: 'localhost' });
 
 module.exports = sequelize;

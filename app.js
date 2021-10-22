@@ -1,5 +1,15 @@
-const app = require('./config/server')
-const dbConnection = require('./config/dbserver');
+const app = require('./config/server');
+
+(async () => {
+    const database = require('./config/dbserver');
+
+    try {
+        const resultado = await database.sync();
+        console.log(resultado);
+    } catch (error) {
+        console.log(error);
+    }
+})();
 
 /* Rotas Públicas*/
  
