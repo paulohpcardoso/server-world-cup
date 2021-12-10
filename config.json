@@ -1,0 +1,11 @@
+{
+    "database": {
+        "database": "copa_do_mundo",
+        "port": 3306,
+        "username": "root",
+        "password": "12345678",
+        "host": "localhost",
+        "dialect": "mysql"
+    },
+    "secret": "candelabro"
+}
