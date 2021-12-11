@@ -15,7 +15,7 @@ module.exports = {
 async function authenticate({ username, password }) {
     const user = await db.User.scope('withPass').findOne({ where: { username }});
 
-    if (!user || !(await bcrypt.compare(password, user.pass)))
+    if (!user || !(await bcrypt.compare(password, user.password)))
         throw 'Username or password is incorrect';
 
     const token = jwt.sign({ sub: user.id }, config.secret, { expiresIn: '7d' });
@@ -38,7 +38,7 @@ async function create(params) {
 
     // hash password
     if (params.password) {
-        params.hash = await bcrypt.hash(params.password, 10);
+        params.password = await bcrypt.hash(params.password, 10);
     }
 
     // save user

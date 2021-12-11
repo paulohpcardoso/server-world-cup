@@ -11,6 +11,12 @@ app.use(cors());
 
 // api routes
 app.use('/users', require('./users/users.controller'));
+app.use('/selecoes', require('./selecoes/selecoes.controller'));
+app.use('/jogadores', require('./jogadores/jogadores.controller'));
+app.use('/estadios', require('./estadios/estadios.controller'));
+app.use('/partidas', require('./partidas/partidas.controller'));
+app.use('/eventos', require('./eventos/eventos.controller'));
+app.use('/estatisticas', require('./estatisticas/estatisticas.controller'));
 
 // global error handler
 app.use(errorHandler);
